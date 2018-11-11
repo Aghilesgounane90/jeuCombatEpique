@@ -2,7 +2,7 @@ package perssonage;
 
 import java.util.Scanner;
 
-public class Personnage {
+public abstract class Personnage {
 
     protected String nom;
     /** Niveau de Personnage*/
@@ -64,7 +64,9 @@ public class Personnage {
         return nom;
     }
 
+    public abstract void attaqueBasique(Personnage personnage);
 
+    public abstract  void attaqueSpeciale(Personnage personnage);
 
 
 }

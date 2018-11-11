@@ -12,24 +12,44 @@ public class Main {
         System.out.println("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
         Scanner scJoueur1 = new Scanner(System.in);
         int nbJoueur1 = scJoueur1.nextInt();
-        try{
+
         Personnage joueur1 = choosePlayer(nbJoueur1);
         joueur1 = choosePlayerCharacteristics(joueur1);
         System.out.println("worg je suis le "+joueur1.getNom()+" niveau "+joueur1.getNiveau()+" je possède "+joueur1.getVie()+"vitalité, "+joueur1.getForce()+" de force "+joueur1.getAgilite()+" d'agilité "+joueur1.getIntelligence()+" d'intelligence");
-        }catch (InexistentePersonaje e){
-            System.out.println("Personnage n'existe pas.");
-        }
+
         System.out.println("Création du personnage du joueur 2");
         System.out.println("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
         Scanner scJoueur2 = new Scanner(System.in);
         int nb = scJoueur2.nextInt();
-        try{
         Personnage joueur2 = choosePlayer(nb);
         joueur2 = choosePlayerCharacteristics(joueur2);
         System.out.println("Abracadabra je suis le "+joueur2.getNom()+" niveau "+joueur2.getNiveau()+" je possède "+joueur2.getVie()+"vitalité, "+joueur2.getForce()+" de force "+joueur2.getAgilite()+" d'agilité "+joueur2.getIntelligence()+" d'intelligence");
-        }catch (InexistentePersonaje e){
-            System.out.println("Personnage n'existe pas.");
+
+        while(true){
+            System.out.println("Joueur 1 ("+joueur1.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
+            Scanner scAttaqueJoueur1 = new Scanner(System.in);
+            int attaqueJoueur1 = scAttaqueJoueur1.nextInt();
+            switch (attaqueJoueur1){
+                case 1 :
+                    joueur1.attaqueBasique(joueur2);
+                    break;
+                case 2 :
+                    joueur1.attaqueSpeciale(joueur2);
+                    break;
+            }
+            System.out.println("Joueur 2 ("+joueur1.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
+            Scanner scAttaqueJoueur2 = new Scanner(System.in);
+            int attaqueJoueur2 = scAttaqueJoueur2.nextInt();
+            switch (attaqueJoueur1){
+                case 1 :
+                    joueur2.attaqueBasique(joueur1);
+                    break;
+                case 2 :
+                    joueur2.attaqueSpeciale(joueur1);
+                    break;
+            }
         }
+
 
 
     }

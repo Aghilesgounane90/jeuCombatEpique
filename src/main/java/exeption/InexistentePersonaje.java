@@ -1,4 +1,5 @@
 package exeption;
 
-public class MinMaxCharacteristics extends RuntimeException {
+public class InexistentePersonaje extends RuntimeException {
+
 }
