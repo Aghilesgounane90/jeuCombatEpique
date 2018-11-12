@@ -64,9 +64,9 @@ public abstract class Personnage {
         return nom;
     }
 
-    public abstract void attaqueBasique(Personnage personnage);
+    public abstract void attaqueBasique(String personnage1,String personnage2,Personnage personnage);
 
-    public abstract  void attaqueSpeciale(Personnage personnage);
+    public abstract  void attaqueSpeciale(String personnage1,String personnage2,Personnage personnage);
 
 
 }

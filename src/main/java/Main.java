@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("Création du personnage du joueur 1");
         System.out.println("Veuillez choisir la classe de votre personnage (1 : Guerrier, 2 : Rôdeur, 3 : Mage)");
         Scanner scJoueur1 = new Scanner(System.in);
         int nbJoueur1 = scJoueur1.nextInt();
-
         Personnage joueur1 = choosePlayer(nbJoueur1);
         joueur1 = choosePlayerCharacteristics(joueur1);
         System.out.println("worg je suis le "+joueur1.getNom()+" niveau "+joueur1.getNiveau()+" je possède "+joueur1.getVie()+"vitalité, "+joueur1.getForce()+" de force "+joueur1.getAgilite()+" d'agilité "+joueur1.getIntelligence()+" d'intelligence");
@@ -24,34 +24,27 @@ public class Main {
         Personnage joueur2 = choosePlayer(nb);
         joueur2 = choosePlayerCharacteristics(joueur2);
         System.out.println("Abracadabra je suis le "+joueur2.getNom()+" niveau "+joueur2.getNiveau()+" je possède "+joueur2.getVie()+"vitalité, "+joueur2.getForce()+" de force "+joueur2.getAgilite()+" d'agilité "+joueur2.getIntelligence()+" d'intelligence");
-
-        while(true){
+        boolean finJeux = false;
+        while(!finJeux){
             System.out.println("Joueur 1 ("+joueur1.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
-            Scanner scAttaqueJoueur1 = new Scanner(System.in);
-            int attaqueJoueur1 = scAttaqueJoueur1.nextInt();
-            switch (attaqueJoueur1){
-                case 1 :
-                    joueur1.attaqueBasique(joueur2);
-                    break;
-                case 2 :
-                    joueur1.attaqueSpeciale(joueur2);
-                    break;
-            }
-            System.out.println("Joueur 2 ("+joueur1.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
-            Scanner scAttaqueJoueur2 = new Scanner(System.in);
-            int attaqueJoueur2 = scAttaqueJoueur2.nextInt();
-            switch (attaqueJoueur1){
-                case 1 :
-                    joueur2.attaqueBasique(joueur1);
-                    break;
-                case 2 :
-                    joueur2.attaqueSpeciale(joueur1);
-                    break;
-            }
+            attaque("joueur 1","joueur 2",joueur1,joueur2);
+            System.out.println("Joueur 2 ("+joueur2.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
+            attaque("joueur 2","joueur 1",joueur2,joueur1);
+
         }
+    }
 
-
-
+    public static void attaque(String p1,String p2, Personnage personnage1, Personnage personnage2){
+        Scanner scAttaqueJoueur1 = new Scanner(System.in);
+        int attaqueJoueur1 = scAttaqueJoueur1.nextInt();
+        switch (attaqueJoueur1){
+            case 1 :
+                personnage1.attaqueBasique(p1,p2,personnage2);
+                break;
+            case 2 :
+                personnage1.attaqueSpeciale(p1,p2,personnage2);
+                break;
+        }
     }
 
     /**
