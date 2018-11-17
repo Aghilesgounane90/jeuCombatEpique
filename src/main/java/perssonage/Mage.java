@@ -1,5 +1,8 @@
 package perssonage;
 
+/**
+ * La classe du personnage Mage qui hérite de la classe principame Personnage.
+ */
 public class Mage extends Personnage {
 
     public Mage() {

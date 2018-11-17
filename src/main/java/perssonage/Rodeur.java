@@ -1,5 +1,8 @@
 package perssonage;
 
+/**
+ * La classe du personnage Rodeur qui hérite de la classe principame Personnage.
+ */
 public class Rodeur extends Personnage {
 
     public Rodeur() {

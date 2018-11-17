@@ -1,5 +1,8 @@
 package perssonage;
 
+/**
+ * La classe du personnage Guerrier qui hérite de la classe principame Personnage.
+ */
 public class Guerrier extends Personnage {
 
     public Guerrier() {

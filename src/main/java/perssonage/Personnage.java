@@ -1,7 +1,8 @@
 package perssonage;
 
-import java.util.Scanner;
-
+/**
+ * La classe principame Personnage.
+ */
 public abstract class Personnage {
 
     protected String nom;
