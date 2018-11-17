@@ -26,14 +26,33 @@ public class Main {
         System.out.println("Abracadabra je suis le "+joueur2.getNom()+" niveau "+joueur2.getNiveau()+" je possède "+joueur2.getVie()+"vitalité, "+joueur2.getForce()+" de force "+joueur2.getAgilite()+" d'agilité "+joueur2.getIntelligence()+" d'intelligence");
         boolean finJeux = false;
         while(!finJeux){
-            System.out.println("Joueur 1 ("+joueur1.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
-            attaque("joueur 1","joueur 2",joueur1,joueur2);
-            System.out.println("Joueur 2 ("+joueur2.getVie()+" vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
-            attaque("joueur 2","joueur 1",joueur2,joueur1);
+
+            if(joueur1.getVie() > 0) {
+                System.out.println("Joueur 1 (" + joueur1.getVie() + " vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
+                attaque("joueur 1", "joueur 2", joueur1, joueur2);
+            }else{
+                System.out.println("joueur 1 a perdu !");
+                finJeux = true;
+            }
+            if(joueur2.getVie() > 0) {
+                System.out.println("Joueur 2 (" + joueur2.getVie() + " vitalité) veullez choisir votre action (1 : Attaque Basique, 2 : Attaque Spécial");
+                attaque("joueur 2", "joueur 1", joueur2, joueur1);
+            }else{
+                System.out.println("joueur 2 a perdu !");
+                finJeux = true;
+            }
 
         }
     }
 
+    /**
+     *
+     * Joueur p1 choisi une attaque Une attaque basique qui cause des dommages à l’adversaire et Une attaque spéciale aux effets variés contre le joueur p1
+     * @param p1
+     * @param p2
+     * @param personnage1
+     * @param personnage2
+     */
     public static void attaque(String p1,String p2, Personnage personnage1, Personnage personnage2){
         Scanner scAttaqueJoueur1 = new Scanner(System.in);
         int attaqueJoueur1 = scAttaqueJoueur1.nextInt();
