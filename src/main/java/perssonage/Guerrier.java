@@ -10,6 +10,11 @@ public class Guerrier extends Personnage {
         super.nom = "Guerrier";
     }
 
+    public Guerrier( int niveau, int vie, int force, int agilite, int intelligence) {
+        super(niveau, vie, force, agilite, intelligence);
+        super.nom = "Guerrier";
+    }
+
     /**
      *
      * Attaque Basique - Coup d’Épée : Effectue des dommages égaux à la force du joueur sur l’adversaire.

@@ -10,6 +10,11 @@ public class Mage extends Personnage {
         super.nom = "Mage";
     }
 
+    public Mage(int niveau, int vie, int force, int agilite, int intelligence) {
+        super(niveau, vie, force, agilite, intelligence);
+        super.nom = "Mage";
+    }
+
     /**
      *
      * Attaque Basique - Boule de Feu : Effectue des dommages égaux à l’intelligence du joueur sur l’adversaire.

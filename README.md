@@ -1,2 +1,2 @@
 # jeuCombatEpique
-Lancer la classe principale "main" pour commancer de joueur 
+Lancer la classe principale "main" pour commancer de joueur

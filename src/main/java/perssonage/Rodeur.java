@@ -10,6 +10,11 @@ public class Rodeur extends Personnage {
         super.nom = "Rodeur";
     }
 
+    public Rodeur(int niveau, int vie, int force, int agilite, int intelligence) {
+        super(niveau, vie, force, agilite, intelligence);
+        super.nom = "Rodeur";
+    }
+
     /**
      *
      * Attaque Basique - Tir à l’Arc : Effectue des dommages égaux à l’agilité du joueur sur l’adversaire.
